@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import logoImg from './assets/logo.png';
+import wattson from './assets/wattson.png'
 
 class MyGame extends Phaser.Scene
 {
@@ -10,17 +11,17 @@ class MyGame extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('logo', logoImg);
+        this.load.image('logo', wattson);
     }
       
     create ()
     {
-        const logo = this.add.image(400, 150, 'logo');
+        const logo = this.add.image(800, 150, 'logo');
       
         this.tweens.add({
             targets: logo,
             y: 450,
-            duration: 2000,
+            duration: 3000,
             ease: "Power2",
             yoyo: true,
             loop: -1
@@ -31,8 +32,8 @@ class MyGame extends Phaser.Scene
 const config = {
     type: Phaser.AUTO,
     parent: 'phaser-example',
-    width: 800,
-    height: 600,
+    width: 1500,
+    height: 1000,
     scene: MyGame
 };
 
